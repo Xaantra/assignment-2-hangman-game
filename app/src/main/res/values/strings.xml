@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Assignment 2</string>
+    <string-array name="words_array">
+        <item>Balance</item>
+        <item>Chaise</item>
+        <item>Jambon</item>
+        <item>Banc</item>
+        <item>Machine</item>
+        <item>Ordinateur</item>
+        <item>Microphone</item>
+        <item>Clavier</item>
+    </string-array>
 </resources>
