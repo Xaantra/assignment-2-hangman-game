@@ -301,8 +301,8 @@
         android:id="@+id/textLifeNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="269dp"
         android:text="10"
         app:layout_constraintStart_toEndOf="@+id/textLife"
         app:layout_constraintTop_toTopOf="parent" />

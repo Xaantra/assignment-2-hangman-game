@@ -28,41 +28,67 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textWord = findViewById(R.id.textWord);
+        final ArrayList<Button> listButtons = new ArrayList();
+        final TextView textWord = findViewById(R.id.textWord);
         TextView textLife = findViewById(R.id.textLife);
         TextView textLifeNumber = findViewById(R.id.textLifeNumber);
 
         Button buttonA = findViewById(R.id.buttonA);
+        listButtons.add(buttonA);
         Button buttonB = findViewById(R.id.buttonB);
+        listButtons.add(buttonB);
         Button buttonC = findViewById(R.id.buttonC);
+        listButtons.add(buttonC);
         Button buttonD = findViewById(R.id.buttonD);
+        listButtons.add(buttonD);
         Button buttonE = findViewById(R.id.buttonE);
+        listButtons.add(buttonE);
         Button buttonF = findViewById(R.id.buttonF);
+        listButtons.add(buttonF);
         Button buttonG = findViewById(R.id.buttonG);
+        listButtons.add(buttonG);
         Button buttonH = findViewById(R.id.buttonH);
+        listButtons.add(buttonH);
         Button buttonI = findViewById(R.id.buttonI);
+        listButtons.add(buttonI);
         Button buttonJ = findViewById(R.id.buttonJ);
+        listButtons.add(buttonJ);
         Button buttonK = findViewById(R.id.buttonK);
+        listButtons.add(buttonK);
         Button buttonL = findViewById(R.id.buttonL);
+        listButtons.add(buttonL);
         Button buttonM = findViewById(R.id.buttonM);
+        listButtons.add(buttonM);
         Button buttonN = findViewById(R.id.buttonN);
+        listButtons.add(buttonN);
         Button buttonO = findViewById(R.id.buttonO);
+        listButtons.add(buttonO);
         Button buttonP = findViewById(R.id.buttonP);
+        listButtons.add(buttonP);
         Button buttonQ = findViewById(R.id.buttonQ);
+        listButtons.add(buttonQ);
         Button buttonR = findViewById(R.id.buttonR);
+        listButtons.add(buttonR);
         Button buttonS = findViewById(R.id.buttonS);
+        listButtons.add(buttonS);
         Button buttonT = findViewById(R.id.buttonT);
+        listButtons.add(buttonT);
         Button buttonU = findViewById(R.id.buttonU);
+        listButtons.add(buttonU);
         Button buttonV = findViewById(R.id.buttonV);
+        listButtons.add(buttonV);
         Button buttonW = findViewById(R.id.buttonW);
+        listButtons.add(buttonW);
         Button buttonX = findViewById(R.id.buttonX);
+        listButtons.add(buttonX);
         Button buttonY = findViewById(R.id.buttonY);
+        listButtons.add(buttonY);
         Button buttonZ = findViewById(R.id.buttonZ);
+        listButtons.add(buttonZ);
 
 
         Resources res = getResources();
@@ -73,9 +99,23 @@ public class MainActivity extends AppCompatActivity {
         String dashes = new String(new char[hangmanWords[randomWordInt].length()]).replace("\0", "-");
         textWord.setText(dashes);
 
+        Log.d("LIST", listButtons.toString());
+
+        for (int i=0; i < listButtons.size(); i++){
+            final int finalI = i;
+            listButtons.get(i).setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    textWord.setText(listButtons.get(finalI).getText());
+                }
+            });
+        }
+
+
 
 
 
     }
+
+
 
 }
