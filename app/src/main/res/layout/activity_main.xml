@@ -14,7 +14,8 @@
         android:layout_marginBottom="12dp"
         android:text="B"
         app:layout_constraintBottom_toTopOf="@+id/buttonI"
-        app:layout_constraintEnd_toStartOf="@+id/buttonC" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonC"
+        android:onClick="onClick" />
 
 
     <Button
@@ -25,7 +26,8 @@
         android:layout_marginBottom="12dp"
         android:text="F"
         app:layout_constraintBottom_toTopOf="@+id/buttonM"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonV"
@@ -35,7 +37,8 @@
         android:layout_marginBottom="104dp"
         android:text="V"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonW" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonW"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonJ"
@@ -45,7 +48,8 @@
         android:layout_marginBottom="12dp"
         android:text="J"
         app:layout_constraintBottom_toTopOf="@+id/buttonP"
-        app:layout_constraintEnd_toStartOf="@+id/buttonK" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonK"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonG"
@@ -57,7 +61,8 @@
         android:text="G"
         app:layout_constraintBottom_toTopOf="@+id/buttonN"
         app:layout_constraintEnd_toStartOf="@+id/buttonH"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonE"
@@ -67,7 +72,8 @@
         android:layout_marginBottom="12dp"
         android:text="E"
         app:layout_constraintBottom_toTopOf="@+id/buttonK"
-        app:layout_constraintEnd_toStartOf="@+id/buttonF" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonF"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonN"
@@ -77,7 +83,8 @@
         android:layout_marginBottom="12dp"
         android:text="N"
         app:layout_constraintBottom_toTopOf="@+id/buttonU"
-        app:layout_constraintEnd_toStartOf="@+id/buttonO" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonO"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonZ"
@@ -87,7 +94,8 @@
         android:layout_marginBottom="104dp"
         android:text="Z"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonI"
@@ -97,7 +105,8 @@
         android:layout_marginBottom="12dp"
         android:text="I"
         app:layout_constraintBottom_toTopOf="@+id/buttonO"
-        app:layout_constraintEnd_toStartOf="@+id/buttonJ" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonJ"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonO"
@@ -107,7 +116,8 @@
         android:layout_marginBottom="12dp"
         android:text="O"
         app:layout_constraintBottom_toTopOf="@+id/buttonU"
-        app:layout_constraintEnd_toStartOf="@+id/buttonP" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonP"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonD"
@@ -117,7 +127,8 @@
         android:layout_marginBottom="12dp"
         android:text="D"
         app:layout_constraintBottom_toTopOf="@+id/buttonJ"
-        app:layout_constraintEnd_toStartOf="@+id/buttonE" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonE"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonP"
@@ -127,7 +138,8 @@
         android:layout_marginBottom="12dp"
         android:text="P"
         app:layout_constraintBottom_toTopOf="@+id/buttonW"
-        app:layout_constraintEnd_toStartOf="@+id/buttonQ" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonQ"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonQ"
@@ -137,7 +149,8 @@
         android:layout_marginBottom="12dp"
         android:text="Q"
         app:layout_constraintBottom_toTopOf="@+id/buttonW"
-        app:layout_constraintEnd_toStartOf="@+id/buttonR" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonR"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonW"
@@ -147,7 +160,8 @@
         android:layout_marginBottom="104dp"
         android:text="W"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonX" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonX"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonK"
@@ -157,7 +171,8 @@
         android:layout_marginBottom="12dp"
         android:text="K"
         app:layout_constraintBottom_toTopOf="@+id/buttonQ"
-        app:layout_constraintEnd_toStartOf="@+id/buttonL" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonL"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonM"
@@ -167,7 +182,8 @@
         android:layout_marginBottom="12dp"
         android:text="M"
         app:layout_constraintBottom_toTopOf="@+id/buttonS"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonU"
@@ -177,7 +193,8 @@
         android:layout_marginBottom="104dp"
         android:text="U"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonV" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonV"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonH"
@@ -187,7 +204,8 @@
         android:layout_marginBottom="12dp"
         android:text="H"
         app:layout_constraintBottom_toTopOf="@+id/buttonN"
-        app:layout_constraintEnd_toStartOf="@+id/buttonI" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonI"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonT"
@@ -199,7 +217,8 @@
         android:text="T"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonU"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonS"
@@ -209,7 +228,8 @@
         android:layout_marginBottom="12dp"
         android:text="S"
         app:layout_constraintBottom_toTopOf="@+id/buttonZ"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonL"
@@ -219,7 +239,8 @@
         android:layout_marginBottom="12dp"
         android:text="L"
         app:layout_constraintBottom_toTopOf="@+id/buttonS"
-        app:layout_constraintEnd_toStartOf="@+id/buttonM" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonM"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonX"
@@ -229,7 +250,8 @@
         android:layout_marginBottom="104dp"
         android:text="X"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonY" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonY"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonA"
@@ -237,10 +259,10 @@
         android:layout_height="45dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="12dp"
-        android:onClick="testLetter"
         android:text="A"
         app:layout_constraintBottom_toTopOf="@+id/buttonG"
-        app:layout_constraintEnd_toStartOf="@+id/buttonB" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonB"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonY"
@@ -250,7 +272,8 @@
         android:layout_marginBottom="104dp"
         android:text="Y"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonZ" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonZ"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonC"
@@ -260,7 +283,8 @@
         android:layout_marginBottom="12dp"
         android:text="C"
         app:layout_constraintBottom_toTopOf="@+id/buttonJ"
-        app:layout_constraintEnd_toStartOf="@+id/buttonD" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonD"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/buttonR"
@@ -270,7 +294,8 @@
         android:layout_marginBottom="12dp"
         android:text="R"
         app:layout_constraintBottom_toTopOf="@+id/buttonX"
-        app:layout_constraintEnd_toStartOf="@+id/buttonS" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonS"
+        android:onClick="onClick"/>
 
     <TextView
         android:id="@+id/textWord"

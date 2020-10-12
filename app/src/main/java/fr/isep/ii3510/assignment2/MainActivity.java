@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,92 +28,95 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
+    String _hangmanWordGenerated;
+    Button buttonA,buttonB,buttonC,buttonD,buttonE,buttonF,buttonG,buttonH,buttonI,buttonJ,buttonK,buttonL,buttonM,buttonN,buttonO,buttonP,buttonQ,buttonR,buttonS,buttonT,buttonU,buttonV,buttonW,buttonX,buttonY,buttonZ;
+    TextView textWord;
+    TextView textLife;
+    TextView textLifeNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final ArrayList<Button> listButtons = new ArrayList();
-        final TextView textWord = findViewById(R.id.textWord);
-        TextView textLife = findViewById(R.id.textLife);
-        TextView textLifeNumber = findViewById(R.id.textLifeNumber);
 
-        Button buttonA = findViewById(R.id.buttonA);
-        listButtons.add(buttonA);
-        Button buttonB = findViewById(R.id.buttonB);
-        listButtons.add(buttonB);
-        Button buttonC = findViewById(R.id.buttonC);
-        listButtons.add(buttonC);
-        Button buttonD = findViewById(R.id.buttonD);
-        listButtons.add(buttonD);
-        Button buttonE = findViewById(R.id.buttonE);
-        listButtons.add(buttonE);
-        Button buttonF = findViewById(R.id.buttonF);
-        listButtons.add(buttonF);
-        Button buttonG = findViewById(R.id.buttonG);
-        listButtons.add(buttonG);
-        Button buttonH = findViewById(R.id.buttonH);
-        listButtons.add(buttonH);
-        Button buttonI = findViewById(R.id.buttonI);
-        listButtons.add(buttonI);
-        Button buttonJ = findViewById(R.id.buttonJ);
-        listButtons.add(buttonJ);
-        Button buttonK = findViewById(R.id.buttonK);
-        listButtons.add(buttonK);
-        Button buttonL = findViewById(R.id.buttonL);
-        listButtons.add(buttonL);
-        Button buttonM = findViewById(R.id.buttonM);
-        listButtons.add(buttonM);
-        Button buttonN = findViewById(R.id.buttonN);
-        listButtons.add(buttonN);
-        Button buttonO = findViewById(R.id.buttonO);
-        listButtons.add(buttonO);
-        Button buttonP = findViewById(R.id.buttonP);
-        listButtons.add(buttonP);
-        Button buttonQ = findViewById(R.id.buttonQ);
-        listButtons.add(buttonQ);
-        Button buttonR = findViewById(R.id.buttonR);
-        listButtons.add(buttonR);
-        Button buttonS = findViewById(R.id.buttonS);
-        listButtons.add(buttonS);
-        Button buttonT = findViewById(R.id.buttonT);
-        listButtons.add(buttonT);
-        Button buttonU = findViewById(R.id.buttonU);
-        listButtons.add(buttonU);
-        Button buttonV = findViewById(R.id.buttonV);
-        listButtons.add(buttonV);
-        Button buttonW = findViewById(R.id.buttonW);
-        listButtons.add(buttonW);
-        Button buttonX = findViewById(R.id.buttonX);
-        listButtons.add(buttonX);
-        Button buttonY = findViewById(R.id.buttonY);
-        listButtons.add(buttonY);
-        Button buttonZ = findViewById(R.id.buttonZ);
-        listButtons.add(buttonZ);
 
+        textLife = findViewById(R.id.textLife);
+        textLifeNumber = findViewById(R.id.textLifeNumber);
+        textWord = findViewById(R.id.textWord);
+
+        buttonA = findViewById(R.id.buttonA);
+        buttonB = findViewById(R.id.buttonB);
+        buttonC = findViewById(R.id.buttonC);
+        buttonD = findViewById(R.id.buttonD);
+        buttonE = findViewById(R.id.buttonE);
+        buttonF = findViewById(R.id.buttonF);
+        buttonG = findViewById(R.id.buttonG);
+        buttonH = findViewById(R.id.buttonH);
+        buttonI = findViewById(R.id.buttonI);
+        buttonJ = findViewById(R.id.buttonJ);
+        buttonK = findViewById(R.id.buttonK);
+        buttonL = findViewById(R.id.buttonL);
+        buttonM = findViewById(R.id.buttonM);
+        buttonN = findViewById(R.id.buttonN);
+        buttonO = findViewById(R.id.buttonO);
+        buttonP = findViewById(R.id.buttonP);
+        buttonQ = findViewById(R.id.buttonQ);
+        buttonR = findViewById(R.id.buttonR);
+        buttonS = findViewById(R.id.buttonS);
+        buttonT = findViewById(R.id.buttonT);
+        buttonU = findViewById(R.id.buttonU);
+        buttonV = findViewById(R.id.buttonV);
+        buttonW = findViewById(R.id.buttonW);
+        buttonX = findViewById(R.id.buttonX);
+        buttonY = findViewById(R.id.buttonY);
+        buttonZ = findViewById(R.id.buttonZ);
+
+        _hangmanWordGenerated = generateWord();
+
+
+    }
+
+
+
+    public boolean checkLetter(String letter) {
+        boolean buttonColor = false;
+        char[] hangmanWordCurrChar = textWord.getText().toString().toCharArray();
+        for (int i = 0; i < _hangmanWordGenerated.length(); i++) {
+            if (_hangmanWordGenerated.charAt(i) == letter.charAt(0)) {
+                hangmanWordCurrChar[i] = letter.charAt(0);
+                buttonColor = true;
+            }
+        }
+        String updateString = new String(hangmanWordCurrChar);
+        textWord.setText(updateString);
+        return buttonColor;
+    }
+
+    public String generateWord(){
 
         Resources res = getResources();
         String[] hangmanWords = res.getStringArray(R.array.words_array);
 
         Random random = new Random();
         int randomWordInt = random.nextInt(hangmanWords.length);
-        String dashes = new String(new char[hangmanWords[randomWordInt].length()]).replace("\0", "-");
+        String hangmanWordGenerated = hangmanWords[randomWordInt];
+        String dashes = new String(new char[hangmanWordGenerated.length()]).replace("\0", "-");
         textWord.setText(dashes);
+        return hangmanWordGenerated;
 
-        Log.d("LIST", listButtons.toString());
+    }
 
-        for (int i=0; i < listButtons.size(); i++){
-            final int finalI = i;
-            listButtons.get(i).setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v){
-                    textWord.setText(listButtons.get(finalI).getText());
-                }
-            });
+    public void onClick(View view) {
+        String value = ((Button) view).getText().toString();
+        boolean b = checkLetter(value);
+        if(b == false) {
+            ((Button) view).setBackgroundColor(Color.RED);
+            ((Button) view).setEnabled(false);
+        } else {
+            ((Button) view).setBackgroundColor(Color.GREEN);
+            ((Button) view).setEnabled(false);
+
         }
-
-
-
-
 
     }
 
