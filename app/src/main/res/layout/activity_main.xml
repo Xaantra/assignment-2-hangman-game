@@ -314,10 +314,11 @@
         android:id="@+id/textLife"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="177dp"
         android:text="Life:"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textWord" />
@@ -326,10 +327,23 @@
         android:id="@+id/textLifeNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="269dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="221dp"
         android:text="10"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textLife"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="458dp"
+        android:layout_height="283dp"
+        android:layout_marginBottom="50dp"
+        android:text="Restart Game"
+        android:visibility="invisible"
+        android:onClick="onClickRestart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

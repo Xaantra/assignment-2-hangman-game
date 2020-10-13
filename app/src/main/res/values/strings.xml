@@ -9,5 +9,35 @@
         <item>ORDINATEUR</item>
         <item>MICROPHONE</item>
         <item>CLAVIER</item>
+        <item>ABERRATION</item>
+        <item>ABSCONS</item>
+        <item>ABSTRUS </item>
+        <item>ALOPECIE</item>
+        <item>AMPHIGOURI</item>
+        <item>BACCALAUREAT</item>
+        <item>BADIN</item>
+        <item>BARAGOUINER</item>
+        <item>BEQUILLE</item>
+        <item>CHARABIA</item>
+        <item>CONFETTI</item>
+        <item>CRETIN</item>
+        <item>DIVAN</item>
+        <item>GARGOUILLIS</item>
+        <item>BORBORYGME</item>
+        <item>HULUBERLU</item>
+        <item>INFARCTUS</item>
+        <item>JACASSER</item>
+        <item>KALEIDOSCOPE</item>
+        <item>KANGOUROU</item>
+        <item>MANIGANCER</item>
+        <item>MALOTRU</item>
+        <item>METEORE</item>
+        <item>SATELLISER</item>
+        <item>NYLON</item>
+        <item>PALINDROME</item>
+        <item>PAMPHLET</item>
+        <item>POLTRON</item>
+        <item>RECROQUEVILLER</item>
+
     </string-array>
 </resources>
