@@ -1,6 +1,7 @@
 package fr.isep.ii3510.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     String _hangmanWordGenerated;
     int nbLife = 10;
-    Button buttonA,buttonB,buttonC,buttonD,buttonE,buttonF,buttonG,buttonH,buttonI,buttonJ,buttonK,buttonL,buttonM,buttonN,buttonO,buttonP,buttonQ,buttonR,buttonS,buttonT,buttonU,buttonV,buttonW,buttonX,buttonY,buttonZ,restartButton;
+    Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG, buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO, buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW, buttonX, buttonY, buttonZ, restartButton;
     TextView textWord;
     TextView textLife;
     TextView textLifeNumber;
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         textLife = findViewById(R.id.textLife);
         textLifeNumber = findViewById(R.id.textLifeNumber);
@@ -74,70 +74,61 @@ public class MainActivity extends AppCompatActivity {
         buttonZ = findViewById(R.id.buttonZ);
 
         restartButton = findViewById(R.id.restartButton);
-
-
         _hangmanWordGenerated = generateWord();
-
         textLifeNumber.setText(String.valueOf(nbLife));
 
 
     }
 
-
-
-    public boolean checkLetter(String letter) {
-        boolean buttonColor = false;
-        char[] hangmanWordCurrChar = textWord.getText().toString().toCharArray();
-        for (int i = 0; i < _hangmanWordGenerated.length(); i++) {
-            if (_hangmanWordGenerated.charAt(i) == letter.charAt(0)) {
-                hangmanWordCurrChar[i] = letter.charAt(0);
-                buttonColor = true;
-            }
-        }
-        String updateString = new String(hangmanWordCurrChar);
-        textWord.setText(updateString);
-        return buttonColor;
-    }
-
-    public String generateWord(){
-
+    public String generateWord() {
         Resources res = getResources();
         String[] hangmanWords = res.getStringArray(R.array.words_array);
-
         Random random = new Random();
         int randomWordInt = random.nextInt(hangmanWords.length);
         String hangmanWordGenerated = hangmanWords[randomWordInt];
         String dashes = new String(new char[hangmanWordGenerated.length()]).replace("\0", "-");
         textWord.setText(dashes);
         return hangmanWordGenerated;
+    }
 
+    public boolean checkLetter(String letter) {
+        boolean isAnswerCorrect = false;
+        char[] hangmanWordCurrChar = textWord.getText().toString().toCharArray();
+        for (int i = 0; i < _hangmanWordGenerated.length(); i++) {
+            if (_hangmanWordGenerated.charAt(i) == letter.charAt(0)) {
+                hangmanWordCurrChar[i] = letter.charAt(0);
+                isAnswerCorrect = true;
+            }
+        }
+        String updateString = new String(hangmanWordCurrChar);
+        textWord.setText(updateString);
+        return isAnswerCorrect;
     }
 
     public void onClick(View view) {
         String value = ((Button) view).getText().toString();
         boolean b = checkLetter(value);
-        if(b == false) {
+
+        if (!b) {
             ((Button) view).setBackgroundColor(Color.RED);
-            nbLife = nbLife -1;
+            nbLife = nbLife - 1;
             updateLife(nbLife);
 
-            if (nbLife <= 0){
+            if (nbLife <= 0) {
                 gameOver(view);
             }
-
         } else {
             ((Button) view).setBackgroundColor(Color.GREEN);
             boolean w = WordFound();
-            if (w == true){
+            if (w == true) {
                 gameWin(view);
             }
 
-
-        } ((Button) view).setEnabled(false);
-
+        }
+        ((Button) view).setEnabled(false);
     }
 
-    public void gameOver(View view){
+    public void gameOver(View view) {
         textLife.setText("GAME OVER");
         textLife.setTextSize(25);
         textLife.setTextColor(Color.RED);
@@ -145,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         restartButton.setVisibility(view.VISIBLE);
     }
 
-    public void gameWin(View view){
+    public void gameWin(View view) {
         textLife.setText("YOU WON GG NO RE");
         textLife.setTextSize(25);
         textLife.setTextColor(Color.GREEN);
@@ -154,18 +145,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void updateLife(int nbLife){
+    public void updateLife(int nbLife) {
         textLifeNumber.setText(String.valueOf(nbLife));
     }
 
 
     public void onClickRestart(View view) {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    public boolean WordFound(){
+    public boolean WordFound() {
         return _hangmanWordGenerated.contentEquals(textWord.getText());
     }
 }
